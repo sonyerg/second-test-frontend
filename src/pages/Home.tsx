@@ -22,8 +22,8 @@ export default function Home() {
     <div className="container">
       <h2>Number Discussion</h2>
       <StartTreeForm onTreeCreated={handleTreeCreated} />
-      {treeIds.map((treeId) => (
-        <div key={treeId}>
+      {[...treeIds].reverse().map((treeId) => (
+        <div key={treeId} className="discussion-tree">
           <CalculationTree treeId={treeId} updateTrigger={updateTrigger} />
           <OperationForm
             treeId={treeId}
