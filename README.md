@@ -1,6 +1,8 @@
-# Frontend Instructions
+# Technology Stack
 
-Follow instructions on how to run the [backend](https://github.com/sonyerg/second-test-backend) for the functionalities on this frontend to work.
+- Vite
+- React TypeScript
+- Axios
 
 ### Run on root directory
 
