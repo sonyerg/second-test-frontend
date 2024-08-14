@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+import "./OperationForm.css";
 import { addOperation } from "../../services/api";
 
 interface OperationFormProps {
@@ -29,7 +31,7 @@ export default function OperationForm({
   }
 
   return (
-    <div>
+    <div className="operation-form">
       <select value={operation} onChange={(e) => setOperation(e.target.value)}>
         <option value="+">+</option>
         <option value="-">-</option>

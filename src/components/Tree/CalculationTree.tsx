@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+
+import "./CalculationTree.css";
 import { getTree } from "../../services/api";
 
 interface CalculationTreeProps {
@@ -43,16 +45,19 @@ export default function CalculationTree({
   }
 
   return (
-    <div>
-      <h2>Calculation Tree</h2>
+    <div className="tree-container">
       <h3>Starting Number: {treeData.startingNumber}</h3>
-      <ul>
-        {treeData.operations.map((op, index) => (
-          <li key={index}>
-            {op.operation} {op.rightNumber} = {op.result}
-          </li>
-        ))}
-      </ul>
+      {treeData.operations.length === 0 ? (
+        <p>Start the calculation by adding an operation.</p>
+      ) : (
+        <ul>
+          {treeData.operations.map((op, index) => (
+            <div key={index}>
+              {op.operation} {op.rightNumber} = {op.result}
+            </div>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+import "./StartTreeForm.css";
 import { startTree } from "../../services/api";
 
 interface StartTreeFormProps {
@@ -21,13 +23,13 @@ export default function StartTreeForm({ onTreeCreated }: StartTreeFormProps) {
   };
 
   return (
-    <div>
+    <div className="start-tree-form">
       <input
         type="number"
         value={startingNumber}
         onChange={(e) => setStartingNumber(parseFloat(e.target.value))}
       />
-      <button onClick={handleStartTree}>Start Tree</button>
+      <button onClick={handleStartTree}>Post</button>
     </div>
   );
 }
