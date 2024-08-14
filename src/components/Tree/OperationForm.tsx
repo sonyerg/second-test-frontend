@@ -15,7 +15,7 @@ export default function OperationForm({
   const [operation, setOperation] = useState("+");
   const [rightNumber, setRightNumber] = useState<number>(0);
 
-  const handleAddOperation = async () => {
+  async function handleAddOperation() {
     try {
       const response = await addOperation(treeId, operation, rightNumber);
       console.log("Operation added:", response.data);
@@ -24,7 +24,7 @@ export default function OperationForm({
     } catch (error) {
       console.error("Failed to add operation", error);
     }
-  };
+  }
 
   function handleSubmit(e: React.ChangeEvent<HTMLInputElement>) {
     setRightNumber(parseFloat(e.target.value));

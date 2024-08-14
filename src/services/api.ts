@@ -1,23 +1,23 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: import.meta.env.VITE_BASE_URL,
 });
 
-export const startTree = async (startingNumber: number) => {
+export async function startTree(startingNumber: number) {
   return api.post("/start-tree", { startingNumber });
-};
+}
 
-export const addOperation = async (
+export async function addOperation(
   treeId: string,
   operation: string,
   rightNumber: number
-) => {
+) {
   return api.post(`/add-operation/${treeId}`, { operation, rightNumber });
-};
+}
 
-export const getTree = async (treeId: string) => {
+export async function getTree(treeId: string) {
   return api.get(`/tree/${treeId}`);
-};
+}
 
 export default api;

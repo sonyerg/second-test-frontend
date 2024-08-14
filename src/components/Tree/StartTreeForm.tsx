@@ -10,7 +10,7 @@ interface StartTreeFormProps {
 export default function StartTreeForm({ onTreeCreated }: StartTreeFormProps) {
   const [startingNumber, setStartingNumber] = useState(0);
 
-  const handleStartTree = async () => {
+  async function handleStartTree() {
     try {
       const response = await startTree(startingNumber);
       const newTreeId = response.data._id;
@@ -20,7 +20,7 @@ export default function StartTreeForm({ onTreeCreated }: StartTreeFormProps) {
     } finally {
       setStartingNumber(0);
     }
-  };
+  }
 
   return (
     <div className="start-tree-form">

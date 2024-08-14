@@ -10,13 +10,13 @@ export default function Home() {
 
   const [updateTrigger, setUpdateTrigger] = useState(0);
 
-  const handleTreeCreated = (newTreeId: string) => {
+  function handleTreeCreated(newTreeId: string) {
     setTreeIds((prevIds) => [...prevIds, newTreeId]);
-  };
+  }
 
-  const handleOperationAdded = () => {
+  function handleOperationAdded() {
     setUpdateTrigger((prev) => prev + 1);
-  };
+  }
 
   return (
     <div className="container">

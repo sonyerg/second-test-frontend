@@ -27,7 +27,7 @@ export default function CalculationTree({
   const [treeData, setTreeData] = useState<TreeData | null>(null);
 
   useEffect(() => {
-    const fetchTree = async () => {
+    async function fetchTree() {
       try {
         const response = await getTree(treeId);
         console.log("Fetched Tree:", response.data);
@@ -35,7 +35,7 @@ export default function CalculationTree({
       } catch (error) {
         console.error("Failed to fetch tree", error);
       }
-    };
+    }
 
     fetchTree();
   }, [treeId, updateTrigger]);
