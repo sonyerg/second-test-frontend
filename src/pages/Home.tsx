@@ -20,9 +20,12 @@ export default function Home() {
 
   return (
     <div className="container">
-      <h2>Number Discussion</h2>
+      <div className="title">
+        <h2>Number Discussion</h2>
+        <i>Start a discussion</i>
+      </div>
       <StartTreeForm onTreeCreated={handleTreeCreated} />
-      {treeIds.length === 0 && <p>Post a discussion</p>}
+      {treeIds.length === 0 && <p>No discussions yet.</p>}
       {[...treeIds].reverse().map((treeId) => (
         <div key={treeId} className="discussion-tree">
           <CalculationTree treeId={treeId} updateTrigger={updateTrigger} />
