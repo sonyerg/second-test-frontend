@@ -53,7 +53,10 @@ export default function CalculationTree({
         <ul>
           {treeData.operations.map((op, index) => (
             <div key={index}>
-              {op.operation} {op.rightNumber} = {op.result}
+              {op.operation} {op.rightNumber} ={" "}
+              {op.result.toString().split(".")[1]?.length > 4
+                ? op.result.toFixed(4)
+                : op.result}
             </div>
           ))}
         </ul>
